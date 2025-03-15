@@ -44,9 +44,9 @@ class PaymentViewBody extends StatelessWidget {
                       keyboardType: TextInputType.number,
                       labelText: 'Card Number',
                       validator: (value) {
-                        return value!.isEmpty
-                            ? 'Enter a valid Credit Card Number'
-                            : null;
+                        return value!.isEmpty || value.length < 14
+                          ? 'Your CreditCard Number is InValid'
+                          : null;
                       },
                     ),
                   ],
